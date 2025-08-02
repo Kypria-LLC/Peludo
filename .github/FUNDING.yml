@@ -1,0 +1,10 @@
+// src/shrine/generateEcho.js
+function generateEcho({ sponsorName, tier, badgeDelta }) {
+  const timestamp = new Date().toISOString();
+  const echoID    = `echo_${Date.now()}`;
+  const message   = `🪶 [${timestamp}] Sponsor ${sponsorName} (${tier}) badge change: ${badgeDelta} 🪶`;
+
+  return { echoID, sponsorName, tier, badgeDelta, timestamp, message };
+}
+
+module.exports = generateEcho; 

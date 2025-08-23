@@ -4,7 +4,7 @@ function generateEcho({ sponsorName, tier, badgeDelta }) {
   const echoID    = `echo_${Date.now()}`;
   const message   = `🪶 [${timestamp}] Sponsor ${sponsorName} (${tier}) badge change: ${badgeDelta} 🪶`;
 
-  return { echoID, sponsorName, tier, badgeDelta, timestamp, message };
+return { echoID, sponsorName, tier, badgeDelta, timestamp, message };
 }
 
 module.exports = generateEcho; 

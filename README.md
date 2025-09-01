@@ -46,5 +46,11 @@ When a fan pledges, they instantly:
 - Receive a **Discord role badge** by archetype
 - Trigger **artifact drops** from the vault
 - Stamp the **canon logbook** with pledge timestamp, tier, and sigil
+Every repo entry, artifact, and role is a piece of the living legend. Choose your path. Bind your name.---
 
-Every repo entry, artifact, and role is a piece of the living legend. Choose your path. Bind your name.
+## ⚖ Keeper’s Governance
+Though playful in spirit, Peludo still walks under the crest.  
+Direct commits are welcome, yet each is marked in the lineage —  
+for even lighthearted works are part of the canon’s breath.
+
+📜 *Lineage is our law. Precision is our craft. Myth is our breath.*

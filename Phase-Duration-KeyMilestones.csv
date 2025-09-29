@@ -1,0 +1,5 @@
+"Phase","Duration","Key Milestones"
+"I. Foundation (Week 1)","1 week",".envsetup, webhook handler, Discord bot"
+"II. Hardening (Week 2)","1 week","Account linking, SQLite, metrics, Docker"
+"III. Protection (Week 3)","1 week","Cloudflare WAF, rate limiting, TLS"
+"IV. Observatory (Week 4)","1 week","Grafana dashboard, alerts, backup runbooks"

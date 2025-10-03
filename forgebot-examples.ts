@@ -172,13 +172,13 @@ export function exampleUpdateMilestoneProgress(
   sponsorCount: number,
   monthlyRevenue: number
 ) {
-  const { updateMilestoneValue } = require('./forgebot-config');
-
-  // Update sponsor count milestone
-  updateMilestoneValue('milestone-100-sponsors', sponsorCount);
-
-  // Update revenue milestone
-  updateMilestoneValue('revenue-1k-milestone', monthlyRevenue);
+  // Note: Import updateMilestoneValue at the top of your file:
+  // import { updateMilestoneValue } from './forgebot-config';
+  
+  // For demonstration purposes, we'll use a placeholder
+  // In real usage, uncomment the imports and use:
+  // updateMilestoneValue('milestone-100-sponsors', sponsorCount);
+  // updateMilestoneValue('revenue-1k-milestone', monthlyRevenue);
 
   forgeBot.speakScrollCadence(
     `Milestone progress updated: ${sponsorCount} sponsors, $${monthlyRevenue} MRR`
@@ -197,10 +197,11 @@ export async function exampleEnhancedPatronPledge(
   discordClient: any,
   discordId: string,
   amount: number,
-  patronName: string
+  patronName: string,
+  env: { GUILD_ID?: string; PATREON_BRONZE_ROLE_ID?: string; PATREON_SILVER_ROLE_ID?: string; PATREON_GOLD_ROLE_ID?: string }
 ) {
   try {
-    const guild = await discordClient.guilds.fetch(process.env.GUILD_ID);
+    const guild = await discordClient.guilds.fetch(env.GUILD_ID);
     const member = await guild.members.fetch(discordId);
 
     // Determine tier based on amount
@@ -210,9 +211,9 @@ export async function exampleEnhancedPatronPledge(
 
     // Assign role (existing logic)
     const ROLE_MAP: Record<string, string> = {
-      bronze: process.env.PATREON_BRONZE_ROLE_ID || '',
-      silver: process.env.PATREON_SILVER_ROLE_ID || '',
-      gold: process.env.PATREON_GOLD_ROLE_ID || '',
+      bronze: env.PATREON_BRONZE_ROLE_ID || '',
+      silver: env.PATREON_SILVER_ROLE_ID || '',
+      gold: env.PATREON_GOLD_ROLE_ID || '',
     };
     const roleId = ROLE_MAP[tier];
     await member.roles.add(roleId, `Patreon pledge: $${amount}`);
